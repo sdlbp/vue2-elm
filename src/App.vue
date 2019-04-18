@@ -1,5 +1,6 @@
 <template>
   <div>
+<!--  transition 内部组件, 可以把过渡效果应用在被包裹的单个组件,标签上  -->
     <transition name="router-fade" mode="out-in">
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive"></router-view>
@@ -8,6 +9,7 @@
     <transition name="router-fade" mode="out-in">
       <router-view v-if="!$route.meta.keepAlive"></router-view>
     </transition>
+<!-- svg 一种xml描述的图像格式  -->
     <svg-icon></svg-icon>
   </div>
 </template>
@@ -34,3 +36,4 @@
     opacity: 0;
   }
 </style>
+// TODO 为何启动之后是首页
