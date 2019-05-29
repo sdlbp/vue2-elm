@@ -21,6 +21,7 @@ module.exports = {
         env: {
             NODE_ENV: '"development"'
         },
+      useEslint: true,
         port: 8000,
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
