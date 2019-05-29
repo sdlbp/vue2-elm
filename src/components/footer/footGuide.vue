@@ -16,7 +16,6 @@
             ></path>
           </g>
         </symbol>
-
         <symbol
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 40 40"
@@ -99,7 +98,6 @@
             </g>
           </g>
         </symbol>
-
         <symbol
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 40 40"
@@ -139,7 +137,6 @@
             ></path>
           </g>
         </symbol>
-
         <symbol
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 40 40"
@@ -179,7 +176,6 @@
             ></path>
           </g>
         </symbol>
-
         <symbol
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 38 38"
@@ -215,7 +211,6 @@
             <rect width="8" height="2" x="7" y="26" fill="#666" rx="1"></rect>
           </g>
         </symbol>
-
         <symbol viewBox="0 0 38 38" id="orderActive">
           <defs>
             <linearGradient
@@ -241,7 +236,6 @@
             <rect width="8" height="2" x="7" y="26" fill="#FFF" rx="1"></rect>
           </g>
         </symbol>
-
         <symbol
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 38 38"
@@ -288,7 +282,6 @@
             ></use>
           </g>
         </symbol>
-
         <symbol viewBox="0 0 38 38" id="profileActive">
           <defs>
             <linearGradient
@@ -367,17 +360,13 @@
 
 <script>
 import { mapState } from 'vuex'
+
 export default {
-  data () {
-    return {}
-  },
-  created () {},
-  mounted () {},
   computed: {
     ...mapState(['geohash'])
   },
   methods: {
-    gotoAddress (path) {
+    gotoAddress(path) {
       this.$router.push(path)
     }
   }
@@ -397,20 +386,23 @@ export default {
   @include wh(100%, 1.95rem);
   display: flex;
   box-shadow: 0 -0.026667rem 0.053333rem rgba(0, 0, 0, 0.1);
-}
-.guide_item {
-  flex: 1;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  .icon_style {
-    @include wh(0.8rem, 0.8rem);
-    margin-top: 0.3rem;
-    fill: #ccc;
-  }
-  span {
-    @include sc(0.45rem, #666);
+
+  .guide_item {
+    flex: 1;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+
+    .icon_style {
+      @include wh(0.8rem, 0.8rem);
+      margin-top: 0.3rem;
+      fill: #ccc;
+    }
+
+    span {
+      @include sc(0.45rem, #666);
+    }
   }
 }
 </style>
