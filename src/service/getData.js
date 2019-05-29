@@ -459,7 +459,7 @@ export const getUser = () => fetch('/v1/user', { user_id: getStore('user_id') })
 /**
  * 手机号登录
  */
-
+// eslint-disable-next-line
 var sendLogin = (code, mobile, validate_token) =>
   fetch(
     '/v1/login/app_mobile',

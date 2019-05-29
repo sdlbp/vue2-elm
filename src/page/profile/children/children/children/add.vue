@@ -83,7 +83,7 @@ import { postAddAddress } from 'src/service/getData'
 import alertTip from 'src/components/common/alertTip'
 
 export default {
-  data() {
+  data () {
     return {
       verify: false, // 姓名
       verifytwo: false, // 备注
@@ -104,7 +104,7 @@ export default {
       alertText: null // 弹出信息
     }
   },
-  created() {},
+  created () {},
   mixins: [getImgPath],
   components: {
     headTop,
@@ -122,12 +122,12 @@ export default {
   props: [],
   methods: {
     ...mapMutations(['ADD_ADDRESS']),
-    inputThing() {
+    inputThing () {
       !this.message ? (this.verify = true) : (this.verify = false)
       this.bindThing()
     },
     // 输入地址
-    inputThingthree() {
+    inputThingthree () {
       this.verifythree = true
       if (this.mesthree.length == 0) {
         this.sendaddress = '请详细填写送餐地址'
@@ -140,7 +140,7 @@ export default {
       this.bindThing()
     },
     // 输入手机号
-    inputThingfour() {
+    inputThingfour () {
       this.verifyfour = true
       if (/^[1][358][0-9]{9}$/.test(this.telenum)) {
         this.verifyfour = false
@@ -152,7 +152,7 @@ export default {
       this.bindThing()
     },
     // 输入备注手机号
-    inputThingfive() {
+    inputThingfive () {
       this.verifyfive = true
       if (
         /^[1][358][0-9]{9}$/.test(this.standbytelenum) ||
@@ -164,7 +164,7 @@ export default {
       }
       this.bindThing()
     },
-    bindThing() {
+    bindThing () {
       if (this.message && this.mesthree && !this.verifyfour) {
         this.butpart = true
       } else {
@@ -172,7 +172,7 @@ export default {
       }
     },
     // 保存地址
-    async submitThing() {
+    async submitThing () {
       let res = await postAddAddress(
         this.userInfo.user_id,
         this.mesthree,

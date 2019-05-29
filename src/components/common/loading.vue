@@ -19,18 +19,18 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       positionY: 0,
       timer: null
     }
   },
-  mounted() {
+  mounted () {
     this.timer = setInterval(() => {
       this.positionY++
     }, 600)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     clearInterval(this.timer)
   }
 }

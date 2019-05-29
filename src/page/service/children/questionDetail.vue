@@ -9,7 +9,7 @@
 
 <script>
 import headTop from 'src/components/header/head'
-import { mapState, mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 import showdown from 'showdown'
 import BScroll from 'better-scroll'
 
@@ -22,6 +22,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      // eslint-disable-next-line
       new BScroll('#scroll_section', {
         deceleration: 0.001,
         bounce: true,

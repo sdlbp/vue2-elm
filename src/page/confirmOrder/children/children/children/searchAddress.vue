@@ -36,7 +36,7 @@ import { searchNearby } from 'src/service/getData'
 import { mapMutations } from 'vuex'
 
 export default {
-  data() {
+  data () {
     return {
       searchValue: null, // 输入的搜索内容
       searchData: null // 搜索的结果
@@ -49,13 +49,13 @@ export default {
   methods: {
     ...mapMutations(['CHOOSE_SEARCH_ADDRESS']),
     // 搜索
-    async searchPlace() {
+    async searchPlace () {
       if (this.searchValue) {
         this.searchData = await searchNearby(this.searchValue)
       }
     },
     // 选择搜素结果
-    choooedAddress(item) {
+    choooedAddress (item) {
       this.CHOOSE_SEARCH_ADDRESS(item)
       this.$router.go(-1)
     }

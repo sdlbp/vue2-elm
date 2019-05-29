@@ -12,7 +12,7 @@ import FastClick from 'fastclick'
 if ('addEventListener' in document) {
   document.addEventListener(
     'DOMContentLoaded',
-    function() {
+    function () {
       FastClick.attach(document.body)
     },
     false

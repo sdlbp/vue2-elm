@@ -42,10 +42,10 @@
 import { mapState, mapActions } from 'vuex'
 
 export default {
-  data() {
+  data () {
     return {}
   },
-  mounted() {
+  mounted () {
     // 获取用户信息
     this.getUserInfo()
   },

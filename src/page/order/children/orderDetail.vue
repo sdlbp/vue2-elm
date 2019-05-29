@@ -36,7 +36,10 @@
             </svg>
           </router-link>
           <ul class="food_list_ul">
-            <li v-for="item in orderDetail.basket.group[0]">
+            <li
+              v-for="(item, index) in orderDetail.basket.group[0]"
+              :key="index"
+            >
               <p class="food_name ellipsis">{{ item.name }}</p>
               <div class="quantity_price">
                 <span>X{{ item.quantity }}</span>
@@ -109,7 +112,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 import headTop from 'src/components/header/head'
 import { getImgPath } from 'src/components/common/mixin'
 import { getOrderDetail } from 'src/service/getData'
@@ -145,6 +148,7 @@ export default {
         )
         this.showLoading = false
         this.$nextTick(() => {
+          // eslint-disable-next-line
           new BScroll('#scroll_section', {
             deceleration: 0.001,
             bounce: true,

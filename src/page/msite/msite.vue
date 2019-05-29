@@ -128,6 +128,7 @@ export default {
       })
       .then(() => {
         // 初始化swiper
+        // eslint-disable-next-line
         new Swiper('.swiper-container', {
           pagination: '.swiper-pagination',
           loop: true

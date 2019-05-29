@@ -139,14 +139,14 @@ import { getImgPath } from 'src/components/common/mixin'
 import { imgBaseUrl } from 'src/config/env'
 
 export default {
-  data() {
+  data () {
     return {
       licenseImg: null,
       showlicenseImg: false,
       imgBaseUrl
     }
   },
-  mounted() {},
+  mounted () {},
   computed: {
     ...mapState(['shopDetail'])
   },
@@ -155,7 +155,7 @@ export default {
   },
   mixins: [getImgPath],
   methods: {
-    showLicenseImg(img) {
+    showLicenseImg (img) {
       this.licenseImg = img
       this.showlicenseImg = true
     }

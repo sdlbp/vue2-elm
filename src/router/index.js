@@ -9,7 +9,7 @@ const router = new VueRouter({
   routes,
   mode: routerMode,
   strict: process.env.NODE_ENV !== 'production',
-  scrollBehavior(to, from, savePosition) {
+  scrollBehavior (to, from, savePosition) {
     if (savePosition) {
       return savePosition
     } else {

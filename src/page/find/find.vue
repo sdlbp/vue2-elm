@@ -12,10 +12,10 @@ import { getImgPath } from 'src/components/common/mixin'
 import footGuide from 'src/components/footer/footGuide'
 
 export default {
-  data() {
+  data () {
     return {}
   },
-  created() {},
+  created () {},
   mixins: [getImgPath],
   components: {
     headTop,

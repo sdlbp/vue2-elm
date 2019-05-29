@@ -71,7 +71,6 @@ import alertTip from 'src/components/common/alertTip'
 import {
   mobileCode,
   checkExsis,
-  sendMobile,
   getcaptchas,
   changePassword
 } from 'src/service/getData'
@@ -89,8 +88,7 @@ export default {
       computedTime: 0, // 倒数记时
       showAlert: false, // 显示提示组件
       alertText: null, // 提示的内容
-      accountType: 'mobile', // 注册方式
-      captchaCodeImg: null
+      accountType: 'mobile' // 注册方式
     }
   },
   components: {

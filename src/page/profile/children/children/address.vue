@@ -5,7 +5,7 @@
     </head-top>
     <section class="address">
       <ul class="addresslist">
-        <li v-for="(item, index) in removeAddress">
+        <li v-for="(item, index) in removeAddress" :key="index">
           <div>
             <p>{{ item.address }}</p>
             <p
@@ -42,7 +42,7 @@
 import headTop from 'src/components/header/head'
 import { getImgPath } from 'src/components/common/mixin'
 import { mapState, mapActions } from 'vuex'
-import { getAddressList, deleteAddress } from 'src/service/getData'
+import { deleteAddress } from 'src/service/getData'
 
 export default {
   data() {
@@ -56,7 +56,6 @@ export default {
     this.initData()
   },
   mixins: [getImgPath],
-  mounted() {},
   components: {
     headTop
   },

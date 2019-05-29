@@ -19,7 +19,7 @@ import headTop from 'src/components/header/head'
 import { mapMutations } from 'vuex'
 
 export default {
-  data() {
+  data () {
     return {
       invoice: false // 是否需要发票
     }
@@ -31,11 +31,11 @@ export default {
   methods: {
     ...mapMutations(['CONFIRM_INVOICE']),
     // 是否选择发票
-    chooseInvoice() {
+    chooseInvoice () {
       this.invoice = !this.invoice
     },
     // 保存发票信息
-    confrimInvoice() {
+    confrimInvoice () {
       this.CONFIRM_INVOICE(this.invoice)
       this.$router.go(-1)
     }

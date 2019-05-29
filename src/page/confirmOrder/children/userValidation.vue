@@ -41,7 +41,7 @@ import { rePostVerify, validateOrders } from 'src/service/getData'
 import alertTip from 'src/components/common/alertTip'
 
 export default {
-  data() {
+  data () {
     return {
       validate: null, // 验证码
       countDown: 60, // 倒计时
@@ -57,14 +57,14 @@ export default {
     headTop,
     alertTip
   },
-  created() {
+  created () {
     this.sig = this.$route.query.sig
   },
-  mounted() {
+  mounted () {
     this.count()
     this.getData()
   },
-  beforeDestroy() {
+  beforeDestroy () {
     clearInterval(this.timer)
   },
   props: [],
@@ -74,7 +74,7 @@ export default {
   methods: {
     ...mapMutations(['CHANGE_ORDER_PARAM', 'ORDER_SUCCESS']),
     // 到计时
-    count() {
+    count () {
       this.countDown = 60
       clearInterval(this.timer)
       this.timer = setInterval(() => {
@@ -85,19 +85,19 @@ export default {
       }, 1000)
     },
     // 重新发送
-    recall() {
+    recall () {
       this.count()
       this.type = 'sms'
       this.getData()
     },
     // 发送语音验证
-    sendVoice() {
+    sendVoice () {
       this.showVoiceTip = true
       this.type = 'voice'
       this.getData()
     },
     // 获取验证信息
-    async getData() {
+    async getData () {
       this.reCallVerify = await rePostVerify(this.cart_id, this.sig, this.type)
       if (this.reCallVerify.message) {
         this.showAlert = true
@@ -105,7 +105,7 @@ export default {
       }
     },
     // 确认订单
-    async confrimOrder() {
+    async confrimOrder () {
       this.CHANGE_ORDER_PARAM({
         validation_code: this.validate,
         validation_token: this.reCallVerify.validate_token

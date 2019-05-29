@@ -74,7 +74,7 @@ import { payRequest } from 'src/service/getData'
 import alertTip from 'src/components/common/alertTip'
 
 export default {
-  data() {
+  data () {
     return {
       payDetail: false, // 付款信息详情
       showAlert: false,
@@ -88,24 +88,24 @@ export default {
     headTop,
     alertTip
   },
-  created() {
+  created () {
     this.initData()
     // 清除购物车中当前商铺的信息
     if (this.shopid) {
       this.CLEAR_CART(this.shopid)
     }
   },
-  mounted() {
+  mounted () {
     this.remainingTime()
   },
-  beforeDestroy() {
+  beforeDestroy () {
     clearInterval(this.timer)
   },
   props: [],
   computed: {
     ...mapState(['orderMessage', 'userInfo', 'shopid', 'cartPrice']),
     // 时间转换
-    remaining: function() {
+    remaining: function () {
       let minute = parseInt(this.countNum / 60)
       if (minute < 10) {
         minute = '0' + minute
@@ -120,7 +120,7 @@ export default {
   methods: {
     ...mapMutations(['CONFIRM_INVOICE', 'CLEAR_CART']),
     // 初始化信息
-    async initData() {
+    async initData () {
       this.payDetail = await payRequest(
         this.orderMessage.order_id,
         this.userInfo.user_id
@@ -131,7 +131,7 @@ export default {
       }
     },
     // 倒计时
-    remainingTime() {
+    remainingTime () {
       clearInterval(this.timer)
       this.timer = setInterval(() => {
         this.countNum--
@@ -143,13 +143,13 @@ export default {
       }, 1000)
     },
     // 确认付款
-    confrimPay() {
+    confrimPay () {
       this.showAlert = true
       this.alertText = '当前环境无法支付，请打开官方APP进行付款'
       this.gotoOrders = true
     },
     // 关闭提示框，跳转到订单列表页
-    closeTipFun() {
+    closeTipFun () {
       this.showAlert = false
       if (this.gotoOrders) {
         this.$router.push('/order')

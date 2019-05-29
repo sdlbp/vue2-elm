@@ -22,6 +22,13 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    // 以下规则个人添加
+    'camelcase': 'off',
+    'eqeqeq': 'off',
+    'space-before-function-paren': 'off', // 和 prettier 冲突
+    'no-array-constructor': 'off',
+    'vue/no-use-v-if-with-v-for': 'off'
   }
 }

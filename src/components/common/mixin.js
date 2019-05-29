@@ -1,5 +1,5 @@
+/* eslint-disable */
 import { getStyle } from '../../config/mUtils'
-import { imgBaseUrl, localapi, proapi } from '../../config/env'
 
 export const loadMore = {
   directives: {
@@ -84,7 +84,7 @@ export const loadMore = {
 export const getImgPath = {
   methods: {
     // 传递过来的图片地址需要处理后才能正常使用
-    getImgPath(path) {
+    getImgPath (path) {
       let suffix
       if (!path) {
         return '//elm.cangdu.org/img/default.jpg'

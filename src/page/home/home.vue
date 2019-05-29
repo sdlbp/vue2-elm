@@ -101,6 +101,7 @@ export default {
       let sortobj = {}
       for (let i = 65; i <= 90; i++) {
         if (this.groupcity[String.fromCharCode(i)]) {
+          // eslint-disable-next-line
           sortobj[String.fromCharCode(i)] = this.groupcity[
             String.fromCharCode(i)
           ]

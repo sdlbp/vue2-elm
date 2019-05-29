@@ -68,6 +68,7 @@ export default {
         this.expiredList = await getExpired(this.userInfo.user_id)
         this.showLoading = false
         this.$nextTick(() => {
+          // eslint-disable-next-line
           new BScroll('#scroll_section', {
             deceleration: 0.001,
             bounce: true,

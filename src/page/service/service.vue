@@ -52,7 +52,7 @@ import { getService } from 'src/service/getData'
 import { mapMutations } from 'vuex'
 
 export default {
-  data() {
+  data () {
     return {
       serviceData: null, // 服务信息
       questionTitle: [], // 问题标题
@@ -60,7 +60,7 @@ export default {
     }
   },
 
-  mounted() {
+  mounted () {
     this.initData()
   },
   mixins: [],
@@ -71,7 +71,7 @@ export default {
   methods: {
     ...mapMutations(['SAVE_QUESTION']),
     // 获取信息
-    async initData() {
+    async initData () {
       this.serviceData = await getService()
       Object.keys(this.serviceData).forEach((item) => {
         let avoidRepeat = false
@@ -90,7 +90,7 @@ export default {
       })
     },
     // 保存问题详情
-    toQuestionDetail(title, index) {
+    toQuestionDetail (title, index) {
       this.SAVE_QUESTION({ title, detail: this.questionDetail[index] })
       this.$router.push('/service/questionDetail')
     }

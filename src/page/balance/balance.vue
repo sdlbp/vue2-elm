@@ -40,13 +40,13 @@ import headTop from 'src/components/header/head'
 import alertTip from 'src/components/common/alertTip'
 
 export default {
-  data() {
+  data () {
     return {
       showAlert: false,
       alertText: null
     }
   },
-  mounted() {},
+  mounted () {},
   components: {
     headTop,
     alertTip

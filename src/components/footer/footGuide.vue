@@ -368,16 +368,16 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  data() {
+  data () {
     return {}
   },
-  created() {},
-  mounted() {},
+  created () {},
+  mounted () {},
   computed: {
     ...mapState(['geohash'])
   },
   methods: {
-    gotoAddress(path) {
+    gotoAddress (path) {
       this.$router.push(path)
     }
   }

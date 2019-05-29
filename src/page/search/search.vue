@@ -138,7 +138,7 @@ import { imgBaseUrl } from '../../config/env'
 import { getStore, setStore } from '../../config/mUtils'
 
 export default {
-  data() {
+  data () {
     return {
       geohash: '', // msite页面传递过来的地址信息
       searchValue: '', // 搜索内容
@@ -149,8 +149,8 @@ export default {
       emptyResult: false // 搜索结果为空时显示
     }
   },
-  created() {},
-  mounted() {
+  created () {},
+  mounted () {
     this.geohash = this.$route.params.geohash
     // 获取搜索历史记录
     if (getStore('searchHistory')) {
@@ -163,7 +163,7 @@ export default {
   },
   methods: {
     // 点击提交按钮，搜索结果并显示，同时将搜索内容存入历史记录
-    async searchTarget(historyValue) {
+    async searchTarget (historyValue) {
       if (historyValue) {
         this.searchValue = historyValue
       } else if (!this.searchValue) {
@@ -199,7 +199,7 @@ export default {
       setStore('searchHistory', this.searchHistory)
     },
     // 搜索结束后，删除搜索内容直到为空时清空搜索结果，并显示历史记录
-    checkInput() {
+    checkInput () {
       if (this.searchValue === '') {
         this.showHistory = true // 显示历史记录
         this.restaurantList = [] // 清空搜索结果
@@ -207,12 +207,12 @@ export default {
       }
     },
     // 点击删除按钮，删除当前历史记录
-    deleteHistory(index) {
+    deleteHistory (index) {
       this.searchHistory.splice(index, 1)
       setStore('searchHistory', this.searchHistory)
     },
     // 清除所有历史记录
-    clearAllHistory() {
+    clearAllHistory () {
       this.searchHistory = []
       setStore('searchHistory', this.searchHistory)
     }

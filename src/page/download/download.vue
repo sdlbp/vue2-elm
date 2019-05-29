@@ -19,14 +19,14 @@ import headTop from 'src/components/header/head'
 import alertTip from 'src/components/common/alertTip'
 
 export default {
-  data() {
+  data () {
     return {
       system: null,
       showAlert: false,
       alertText: null
     }
   },
-  created() {
+  created () {
     // 判断系统
     let u = navigator.userAgent
     let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 // g
@@ -46,7 +46,7 @@ export default {
   },
   props: [],
   methods: {
-    download() {
+    download () {
       // 如果是ios用户则提示，否则直接下载
       if (this.system == 'IOS') {
         this.showAlert = true

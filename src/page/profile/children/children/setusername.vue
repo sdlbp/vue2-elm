@@ -29,7 +29,7 @@ import headTop from 'src/components/header/head'
 import { getImgPath } from 'src/components/common/mixin'
 import { mapMutations, mapState } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
       earn: true, // 输入框提醒
       bordercolor: false, // 输入框边框颜色
@@ -38,19 +38,19 @@ export default {
       newusername: '' // 新用户名
     }
   },
-  created() {},
+  created () {},
   mixins: [getImgPath],
   components: {
     headTop
   },
-  mounted() {},
+  mounted () {},
   computed: {
     ...mapState(['userInfo'])
   },
   props: [],
   methods: {
     ...mapMutations(['RETSET_NAME']),
-    inputThing() {
+    inputThing () {
       if (this.inputValue.length < 5 || this.inputValue.length > 24) {
         this.earn = false
         this.bordercolor = true
@@ -63,7 +63,7 @@ export default {
         return true
       }
     },
-    resetName() {
+    resetName () {
       let checkResult = this.inputThing()
       if (!checkResult) {
         return

@@ -19,7 +19,11 @@
     </section>
     <section class="poisearch-container" v-show="adressList">
       <ul>
-        <li v-for="(item, index) in adressList" @click="listClick(index)">
+        <li
+          v-for="(item, index) in adressList"
+          :key="index"
+          @click="listClick(index)"
+        >
           <p>{{ item.name }}</p>
           <p>{{ item.address }}</p>
         </li>
@@ -45,17 +49,17 @@ export default {
     this.inputAdress = this.addAddress ? this.addAddress : this.inputAdress
   },
   mounted() {
-    // getSearchAddress(this.inputAdress).then(res => {
-    // 		this.adressList=res;
-    // 		this.warning=true;
-    // 	if(this.adressList.length > 0){
-    // 		this.warning=false;
-    // 		if(this.inputAdress == ''){
-    // 			this.adressList=[];
-    // 			this.warning=true;
-    // 		}
-    // 	}
-    // });
+    // getSearchAddress(this.inputAdress).then((res) => {
+    //   this.adressList = res
+    //   this.warning = true
+    //   if (this.adressList.length > 0) {
+    //     this.warning = false
+    //     if (this.inputAdress == '') {
+    //       this.adressList = []
+    //       this.warning = true
+    //     }
+    //   }
+    // })
   },
   mixins: [getImgPath],
   components: {

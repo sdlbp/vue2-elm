@@ -76,22 +76,22 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
       showMoveDot: [] // 控制下落的小圆点显示隐藏
     }
   },
-  mounted() {},
+  mounted () {},
   computed: {
     ...mapState(['cartList']),
     /**
      * 监听cartList变化，更新当前商铺的购物车信息shopCart，同时返回一个新的对象
      */
-    shopCart: function() {
+    shopCart: function () {
       return Object.assign({}, this.cartList[this.shopId])
     },
     // shopCart变化的时候重新计算当前商品的数量
-    foodNum: function() {
+    foodNum: function () {
       let category_id = this.foods.category_id
       let item_id = this.foods.item_id
       if (
@@ -115,7 +115,7 @@ export default {
   methods: {
     ...mapMutations(['ADD_CART', 'REDUCE_CART']),
     // 移出购物车
-    removeOutCart(
+    removeOutCart (
       category_id,
       item_id,
       food_id,
@@ -142,7 +142,7 @@ export default {
       }
     },
     // 加入购物车，计算按钮位置。
-    addToCart(
+    addToCart (
       category_id,
       item_id,
       food_id,
@@ -172,11 +172,11 @@ export default {
       this.$emit('showMoveDot', this.showMoveDot, elLeft, elBottom)
     },
     // 显示规格列表
-    showChooseList(foodScroll) {
+    showChooseList (foodScroll) {
       this.$emit('showChooseList', foodScroll)
     },
     // 点击多规格商品的减按钮，弹出提示
-    showReduceTip() {
+    showReduceTip () {
       this.$emit('showReduceTip')
     }
   }

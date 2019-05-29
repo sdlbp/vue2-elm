@@ -171,8 +171,10 @@ export const showBack = (callback) => {
   // 判断是否达到目标点
   const showBackFun = () => {
     if (document.body.scrollTop > 500) {
+      // eslint-disable-next-line
       callback(true)
     } else {
+      // eslint-disable-next-line
       callback(false)
     }
   }
@@ -226,7 +228,9 @@ export const animate = (
 
   // 获取目标属性单位和初始样式值
   Object.keys(target).forEach((attr) => {
+    // eslint-disable-next-line
     if (/[^\d^\.]+/gi.test(target[attr])) {
+      // eslint-disable-next-line
       unit[attr] = target[attr].match(/[^\d^\.]+/gi)[0] || 'px'
     } else {
       unit[attr] = 'px'

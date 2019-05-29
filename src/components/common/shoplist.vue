@@ -15,7 +15,6 @@
           <header class="shop_detail_header">
             <h4
               :class="item.is_premium ? 'premium' : ''"
-              class=""
               class="shop_title ellipsis"
               >{{ item.name }}</h4
             >

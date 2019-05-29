@@ -42,7 +42,7 @@ import { getcaptchas, exChangeHongbao } from 'src/service/getData'
 import alertTip from 'src/components/common/alertTip'
 
 export default {
-  data() {
+  data () {
     return {
       showAlert: false,
       alertText: null,
@@ -51,7 +51,7 @@ export default {
       captchaCodeImg: null
     }
   },
-  mounted() {
+  mounted () {
     this.getCaptchaCode()
   },
   components: {
@@ -60,7 +60,7 @@ export default {
   },
   computed: {
     ...mapState(['userInfo']),
-    status: function() {
+    status: function () {
       let status =
         /^\d+$/gi.test(this.exchangeCode) && /^\w{4}$/gi.test(this.codeNumber)
       return status
@@ -68,12 +68,12 @@ export default {
   },
   methods: {
     // 线上环境采用固定的图片，编译环境获取真实的验证码
-    async getCaptchaCode() {
+    async getCaptchaCode () {
       let res = await getcaptchas()
       this.captchaCodeImg = res.code
     },
     // 兑换红包
-    async exchange() {
+    async exchange () {
       if (this.status) {
         let res = await exChangeHongbao(
           this.userInfo.user_id,

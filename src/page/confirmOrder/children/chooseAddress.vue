@@ -13,6 +13,7 @@
         <ul class="deliverable_address">
           <li
             v-for="(item, index) in deliverable"
+            :key="index"
             @click.prevent.stop="chooseAddress(item, index)"
           >
             <svg
@@ -44,7 +45,7 @@
         <section id="out_delivery" v-if="deliverdisable.length">
           <header class="out_header">以下地址超出配送范围</header>
           <ul class="deliverable_address">
-            <li v-for="(item, index) in deliverdisable">
+            <li v-for="(item, index) in deliverdisable" :key="index">
               <svg class="choosed_address">
                 <use
                   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -85,9 +86,8 @@
 <script>
 import headTop from 'src/components/header/head'
 import { mapState, mapMutations } from 'vuex'
-import { getAddress, getAddressList } from 'src/service/getData'
+import { getAddressList } from 'src/service/getData'
 import alertTip from 'src/components/common/alertTip'
-import BScroll from 'better-scroll'
 
 export default {
   data() {

@@ -1,4 +1,5 @@
- <template>
+<!-- eslint-disable-->
+<template>
     <div>
         <section v-if="!showLoading" class="shop_container">
             <nav class="goback" @click="goback">
@@ -555,6 +556,7 @@ export default {
     },
     // 控制购物列表是否显示
     toggleCartList () {
+      // eslint-disable-next-line
       this.cartFoodList.length ? this.showCartList = !this.showCartList : true
     },
     // 清除购物车

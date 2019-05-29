@@ -44,7 +44,6 @@
 <script>
 import headTop from 'src/components/header/head'
 import { mapState } from 'vuex'
-import { payRequest } from 'src/service/getData'
 import alertTip from 'src/components/common/alertTip'
 
 export default {

@@ -47,7 +47,7 @@ import loading from 'src/components/common/loading'
 import { mapMutations } from 'vuex'
 
 export default {
-  data() {
+  data () {
     return {
       id: null,
       sig: null,
@@ -57,11 +57,11 @@ export default {
       inputText: null
     }
   },
-  created() {
+  created () {
     this.id = this.$route.query.id
     this.sig = this.$route.query.sig
   },
-  mounted() {
+  mounted () {
     this.initData()
   },
   mixins: [],
@@ -73,17 +73,17 @@ export default {
   methods: {
     ...mapMutations(['CONFIRM_REMARK']),
     // 初始化信息
-    async initData() {
+    async initData () {
       this.remarkList = await getRemark(this.id, this.sig)
       this.showLoading = false
     },
     // 选择备注
-    chooseRemark(index, remarkIndex, text) {
+    chooseRemark (index, remarkIndex, text) {
       this.remarkText[index] = [remarkIndex, text]
       this.remarkText = Object.assign({}, this.remarkText)
     },
     // 确认选择
-    confirmRemark() {
+    confirmRemark () {
       this.CONFIRM_REMARK({
         remarkText: this.remarkText,
         inputText: this.inputText

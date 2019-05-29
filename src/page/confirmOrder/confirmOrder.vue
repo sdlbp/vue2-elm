@@ -205,12 +205,7 @@ import { mapState, mapMutations } from 'vuex'
 import headTop from 'src/components/header/head'
 import alertTip from 'src/components/common/alertTip'
 import loading from 'src/components/common/loading'
-import {
-  checkout,
-  getAddress,
-  placeOrders,
-  getAddressList
-} from 'src/service/getData'
+import { checkout, placeOrders, getAddressList } from 'src/service/getData'
 import { imgBaseUrl } from 'src/config/env'
 
 export default {
@@ -264,6 +259,7 @@ export default {
     ]),
     // 备注页返回的信息进行处理
     remarklist: function() {
+      // eslint-disable-next-line
       let str = new String()
       if (this.remarkText) {
         Object.values(this.remarkText).forEach((item) => {
@@ -291,6 +287,7 @@ export default {
     ]),
     // 初始化数据
     async initData() {
+      // eslint-disable-next-line
       let newArr = new Array()
       Object.values(this.shopCart).forEach((categoryItem) => {
         Object.values(categoryItem).forEach((itemValue) => {

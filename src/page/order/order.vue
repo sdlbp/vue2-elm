@@ -72,7 +72,7 @@ import { mapState, mapMutations } from 'vuex'
 import headTop from 'src/components/header/head'
 import computeTime from 'src/components/common/computeTime'
 import loading from 'src/components/common/loading'
-import { getImgPath, loadMore } from 'src/components/common/mixin'
+import { loadMore } from 'src/components/common/mixin'
 import footGuide from 'src/components/footer/footGuide'
 import { getOrderList } from 'src/service/getData'
 

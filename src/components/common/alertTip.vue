@@ -13,16 +13,16 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       positionY: 0,
       timer: null
     }
   },
-  mounted() {},
+  mounted () {},
   props: ['alertText'],
   methods: {
-    closeTip() {
+    closeTip () {
       this.$emit('closeTip')
     }
   }

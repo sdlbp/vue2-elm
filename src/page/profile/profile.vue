@@ -199,7 +199,7 @@ import { imgBaseUrl } from 'src/config/env'
 import { getImgPath } from 'src/components/common/mixin'
 
 export default {
-  data() {
+  data () {
     return {
       profiletitle: '我的',
       username: '登录/注册', // 用户名
@@ -212,7 +212,7 @@ export default {
       imgBaseUrl
     }
   },
-  mounted() {
+  mounted () {
     this.initData()
   },
   mixins: [getImgPath],
@@ -224,7 +224,7 @@ export default {
   computed: {
     ...mapState(['userInfo']),
     // 后台会返回两种头像地址格式，分别处理
-    imgpath: function() {
+    imgpath: function () {
       let path
       if (this.avatar.indexOf('/') !== -1) {
         path = imgBaseUrl + this.avatar
@@ -238,7 +238,7 @@ export default {
 
   methods: {
     ...mapMutations(['SAVE_AVANDER']),
-    initData() {
+    initData () {
       if (this.userInfo && this.userInfo.user_id) {
         this.avatar = this.userInfo.avatar
         this.username = this.userInfo.username
@@ -253,7 +253,7 @@ export default {
     }
   },
   watch: {
-    userInfo: function(value) {
+    userInfo: function (value) {
       this.initData()
     }
   }

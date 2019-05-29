@@ -119,7 +119,7 @@ import alertTip from 'src/components/common/alertTip'
 import loading from 'src/components/common/loading'
 
 export default {
-  data() {
+  data () {
     return {
       showAlert: false, // 弹出框
       alertText: null, // 弹出框文字
@@ -128,7 +128,7 @@ export default {
       categoryType: 1 // 红包与商家代金券切换
     }
   },
-  mounted() {
+  mounted () {
     this.initData()
   },
   components: {
@@ -141,7 +141,7 @@ export default {
   },
   methods: {
     ...mapMutations(['CLEAR_CART']),
-    async initData() {
+    async initData () {
       if (this.userInfo) {
         this.hongbaoList = await getHongbaoNum(this.userInfo.user_id)
         this.showLoading = false
@@ -149,7 +149,7 @@ export default {
     }
   },
   watch: {
-    userInfo: function(value) {
+    userInfo: function (value) {
       this.initData()
     }
   }
