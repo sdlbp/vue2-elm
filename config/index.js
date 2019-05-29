@@ -21,12 +21,12 @@ module.exports = {
     env: {
       NODE_ENV: '"development"'
     },
-    useEslint: true,
+    useEslint: false,
     port: 8000,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     context: [
-      //代理路径
+      // 代理路径
       '/shopping',
       '/ugc',
       '/v1',
