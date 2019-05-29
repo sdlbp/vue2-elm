@@ -103,108 +103,108 @@
 </template>
 
 <script>
-    import {mapMutations, mapState} from 'vuex'
-    import headTop from 'src/components/header/head'
-    import {signout} from 'src/service/getData'
-    import alertTip from 'src/components/common/alertTip'
-    import {getImgPath} from 'src/components/common/mixin'
-    import {imgBaseUrl} from 'src/config/env'
-    import {removeStore} from 'src/config/mUtils'
+import { mapMutations, mapState } from 'vuex'
+import headTop from 'src/components/header/head'
+import { signout } from 'src/service/getData'
+import alertTip from 'src/components/common/alertTip'
+import { getImgPath } from 'src/components/common/mixin'
+import { imgBaseUrl } from 'src/config/env'
+import { removeStore } from 'src/config/mUtils'
 
-    export default {
-        data(){
-            return{
-                username:'',    //用户名
-                resetname:'', //重置用户名
-                infotel:'',     //用户手机
-                avatar:'',      //用户头像
-                show:false,     //显示提示框
-                isEnter:true,  //是否登录
-                isLeave:false, //是否退出
-                showAlert: false,
-                alertText: null,
-                imgBaseUrl,
-            }
-        },
-        beforeDestroy(){
-            clearTimeout(this.timer)
-        },
-        components: {
-            headTop,
-            alertTip,
-        },
-        mixins: [getImgPath],
-        computed:{
-            ...mapState([
-                'userInfo', 'imgPath'
-            ]),
-        },
-        methods: {
-            ...mapMutations([
-                'OUT_LOGIN', 'SAVE_AVANDER'
-            ]),
-
-            exitlogin(){
-                this.show=true;
-                this.isEnter=true;
-                this.isLeave=false;
-            },
-            waitingThing(){
-                //取消推出
-                clearTimeout(this.timer)
-                this.isEnter=false;
-                this.isLeave=true;
-                this.timer = setTimeout(() =>{
-                    clearTimeout(this.timer)
-                    this.show=false;
-                },200)
-            },
-            //退出登录
-            async outLogin(){
-                this.OUT_LOGIN();
-                this.waitingThing();
-                this.$router.go(-1);
-                removeStore('user_id')
-                await signout();
-            },
-            changePhone(){
-                this.showAlert = true;
-                this.alertText = '请在手机APP中设置';
-            },
-            async uploadAvatar(){
-                //上传头像
-                if (this.userInfo) {
-                    let input = document.querySelector('.profileinfopanel-upload')
-                    let data = new FormData();
-                    data.append('file', input.files[0]);
-                    try{
-                        let response = await fetch('/eus/v1/users/' + this.userInfo.user_id + '/avatar', {
-                              method: 'POST',
-                              credentials: 'include',
-                              body: data
-                            })
-                        let res = await response.json();
-                        if (res.status == 1) {
-                            this.userInfo.avatar = res.image_path;
-                        }
-                    }catch (error) {
-                        this.showAlert = true;
-                        this.alertText = '上传失败';
-                        throw new Error(error);
-                    }
-                }
-            }
-        },
-        watch: {
-            userInfo: function (value) {
-                if (value && value.user_id) {
-                    this.username = value.username;
-                    this.infotel = value.mobile;
-                    this.avatar = value.avatar;
-                }
-            }
-        }
+export default {
+  data () {
+    return {
+      username: '', // 用户名
+      resetname: '', // 重置用户名
+      infotel: '', // 用户手机
+      avatar: '', // 用户头像
+      show: false, // 显示提示框
+      isEnter: true, // 是否登录
+      isLeave: false, // 是否退出
+      showAlert: false,
+      alertText: null,
+      imgBaseUrl
     }
+  },
+  beforeDestroy () {
+    clearTimeout(this.timer)
+  },
+  components: {
+    headTop,
+    alertTip
+  },
+  mixins: [getImgPath],
+  computed: {
+    ...mapState([
+      'userInfo', 'imgPath'
+    ])
+  },
+  methods: {
+    ...mapMutations([
+      'OUT_LOGIN', 'SAVE_AVANDER'
+    ]),
+
+    exitlogin () {
+      this.show = true
+      this.isEnter = true
+      this.isLeave = false
+    },
+    waitingThing () {
+      // 取消推出
+      clearTimeout(this.timer)
+      this.isEnter = false
+      this.isLeave = true
+      this.timer = setTimeout(() => {
+        clearTimeout(this.timer)
+        this.show = false
+      }, 200)
+    },
+    // 退出登录
+    async outLogin () {
+      this.OUT_LOGIN()
+      this.waitingThing()
+      this.$router.go(-1)
+      removeStore('user_id')
+      await signout()
+    },
+    changePhone () {
+      this.showAlert = true
+      this.alertText = '请在手机APP中设置'
+    },
+    async uploadAvatar () {
+      // 上传头像
+      if (this.userInfo) {
+        let input = document.querySelector('.profileinfopanel-upload')
+        let data = new FormData()
+        data.append('file', input.files[0])
+        try {
+          let response = await fetch('/eus/v1/users/' + this.userInfo.user_id + '/avatar', {
+            method: 'POST',
+            credentials: 'include',
+            body: data
+          })
+          let res = await response.json()
+          if (res.status == 1) {
+            this.userInfo.avatar = res.image_path
+          }
+        } catch (error) {
+          this.showAlert = true
+          this.alertText = '上传失败'
+          throw new Error(error)
+        }
+      }
+    }
+  },
+  watch: {
+    userInfo: function (value) {
+      if (value && value.user_id) {
+        this.username = value.username
+        this.infotel = value.mobile
+        this.avatar = value.avatar
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

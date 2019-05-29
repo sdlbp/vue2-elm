@@ -10,13 +10,16 @@ import FastClick from 'fastclick'
 // 在此main.js文件中创建了一个Vue对象,并把App.vue模板的内容挂载到 index.html 的 id 为app 的标签下面,并且绑定了一个router,store
 // 之后渲染展示出来 App.vue
 if ('addEventListener' in document) {
-    document.addEventListener('DOMContentLoaded', function() {
-        FastClick.attach(document.body);
-    }, false);
+  document.addEventListener(
+    'DOMContentLoaded',
+    function() {
+      FastClick.attach(document.body)
+    },
+    false
+  )
 }
 
 new Vue({
-	router,
-	store,
+  router,
+  store
 }).$mount('#app')
-
