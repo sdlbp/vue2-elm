@@ -385,7 +385,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../style/mixin';
-
+// 每个标签里面加一个id可以有效的防止css污染
 #foot_guide {
   background-color: #fff;
   position: fixed;
