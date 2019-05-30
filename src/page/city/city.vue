@@ -53,7 +53,7 @@ import { currentcity, searchplace } from 'src/service/getData'
 import { getStore, setStore, removeStore } from 'src/config/mUtils'
 
 export default {
-  data () {
+  data() {
     return {
       inputVaule: '', // 搜索地址
       cityid: '', // 当前城市id
@@ -65,7 +65,7 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
     this.cityid = this.$route.params.cityid
     // 获取当前城市名字
     currentcity(this.cityid).then((res) => {
@@ -81,7 +81,7 @@ export default {
   computed: {},
 
   methods: {
-    initData () {
+    initData() {
       // 获取搜索历史记录
       if (getStore('placeHistory')) {
         this.placelist = JSON.parse(getStore('placeHistory'))
@@ -90,7 +90,7 @@ export default {
       }
     },
     // 发送搜索信息inputVaule
-    postpois () {
+    postpois() {
       // 输入值不为空时才发送信息
       if (this.inputVaule) {
         searchplace(this.cityid, this.inputVaule).then((res) => {
@@ -104,7 +104,7 @@ export default {
      * 点击搜索结果进入下一页面时进行判断是否已经有一样的历史记录
      * 如果没有则新增，如果有则不做重复储存，判断完成后进入下一页
      */
-    nextpage (index, geohash) {
+    nextpage(index, geohash) {
       let history = getStore('placeHistory')
       let choosePlace = this.placelist[index]
       if (history) {
@@ -124,7 +124,7 @@ export default {
       setStore('placeHistory', this.placeHistory)
       this.$router.push({ path: '/msite', query: { geohash } })
     },
-    clearAll () {
+    clearAll() {
       removeStore('placeHistory')
       this.initData()
     }
@@ -133,7 +133,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/style/mixin';
+@import '../../style/mixin';
 .city_container {
   padding-top: 2.35rem;
 }
