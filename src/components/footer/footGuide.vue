@@ -1,5 +1,7 @@
 <template>
   <section id="foot_guide">
+    <!--    使用 symbol 订了4个 tabbar 2种状态的8张图片 -->
+    <!--  在之后的代码中进行引用,根据路由来判断渲染不同的类  -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -211,7 +213,11 @@
             <rect width="8" height="2" x="7" y="26" fill="#666" rx="1"></rect>
           </g>
         </symbol>
-        <symbol viewBox="0 0 38 38" id="orderActive">
+        <symbol
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 38 38"
+          id="orderActive"
+        >
           <defs>
             <linearGradient
               id="order.070ae2a_a"
@@ -282,7 +288,11 @@
             ></use>
           </g>
         </symbol>
-        <symbol viewBox="0 0 38 38" id="profileActive">
+        <symbol
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 38 38"
+          id="profileActive"
+        >
           <defs>
             <linearGradient
               id="profile.dbc5ebf_a"
