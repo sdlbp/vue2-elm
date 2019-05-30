@@ -398,12 +398,11 @@ export default {
   box-shadow: 0 -0.026667rem 0.053333rem rgba(0, 0, 0, 0.1);
 
   .guide_item {
-    flex: 1;
+    flex-grow: 1;
     display: flex;
-    text-align: center;
     flex-direction: column;
     align-items: center;
-
+    text-align: center;
     .icon_style {
       @include wh(0.8rem, 0.8rem);
       margin-top: 0.3rem;
