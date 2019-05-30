@@ -9,6 +9,8 @@
     <transition name="router-fade" mode="out-in">
       <router-view v-if="!$route.meta.keepAlive"></router-view>
     </transition>
+    <!--  May 30, 2019 19:09  -->
+    <!-- 使用了 defs symbol 做的一个图标集合,在各个页面中使用use标签引用,此集合中并没有关于骨架屏的资源 -->
     <!-- svg 一种xml描述的图像格式  -->
     <svg-icon></svg-icon>
   </div>
@@ -37,6 +39,3 @@ export default {
   opacity: 0;
 }
 </style>
-// 为何启动之后是首页? // Apr 18, 2019 14:48 // routes.js 路由 path 为 *
-时候跳转 /home // 因为没有重启项目,浏览器路径还是在 http://localhost:8000/#/home
-下,所以即使改了 * 的配置组件也看不出来效果,需要重启项目
