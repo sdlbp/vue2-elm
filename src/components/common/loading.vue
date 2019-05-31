@@ -1,3 +1,9 @@
+<!--
+loading 动画效果,整个动画分三部分
+1. backgroudPositionY 来控制竖长条图片切换
+2. 使用 tanslateY 设置图标跳跃动画
+3. 使用 scale 设置底部阴影动画
+-->
 <template>
   <div class="loading_container">
     <div
@@ -19,18 +25,19 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       positionY: 0,
       timer: null
     }
   },
-  mounted () {
+  mounted() {
+    // 通过计时器设置 backgroudPostionY 来轮播竖长条图片
     this.timer = setInterval(() => {
       this.positionY++
     }, 600)
   },
-  beforeDestroy () {
+  beforeDestroy() {
     clearInterval(this.timer)
   }
 }
@@ -39,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/mixin';
 @keyframes load {
+  // translateY 跳跃效果
   0% {
     transform: translateY(0px);
   }
@@ -50,6 +58,7 @@ export default {
   }
 }
 @keyframes ellipse {
+  // 阴影放大缩小效果
   0% {
     transform: scale(1);
   }
@@ -61,27 +70,30 @@ export default {
   }
 }
 .loading_container {
+  // 使元素居中
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   @include wh(2.5rem, 2.5rem);
 }
+
 .load_img {
   @include wh(100%, 100%);
-  background: url(../../images/icon_loading.png) no-repeat 0 0;
-  background-size: 2.5rem auto;
-  transform: translateY(0px);
-  animation: load 0.6s infinite ease-in-out;
+  // 缩写属性 一般设置顺序是 -color -image -repeat -position/-size
   position: relative;
   z-index: 11;
+  background: url(../../images/icon_loading.png) no-repeat 0 0/2.5rem auto;
+  transform: translateY(0px);
+  // infinite 无限重复
+  animation: load 0.6s infinite ease-in-out;
 }
 .load_ellipse {
   position: absolute;
+  z-index: 10;
   @include wh(2.6rem, 2rem);
   top: 2.2rem;
   left: 0.2rem;
-  z-index: 10;
   animation: ellipse 0.6s infinite ease-in-out;
 }
 </style>
