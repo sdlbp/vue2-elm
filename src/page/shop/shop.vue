@@ -191,16 +191,13 @@
                       <span>{{item.price}}</span>
                     </div>
                     <section class="cart_list_control">
-                                            <span
-                                              @click="removeOutCart(item.category_id, item.item_id, item.food_id, item.name, item.price, item.specs)">
-                                                <svg>
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                         xlink:href="#cart-minus"></use>
-                                                </svg>
-                                            </span>
+                      <span @click="removeOutCart(item.category_id, item.item_id, item.food_id, item.name, item.price, item.specs)">
+                        <svg>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-minus"></use>
+                        </svg>
+                      </span>
                       <span class="cart_num">{{item.num}}</span>
-                      <svg class="cart_add"
-                           @click="addToCart(item.category_id, item.item_id, item.food_id, item.name, item.price, item.specs)">
+                      <svg class="cart_add" @click="addToCart(item.category_id, item.item_id, item.food_id, item.name, item.price, item.specs)">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-add"></use>
                       </svg>
                     </section>
@@ -218,7 +215,6 @@
         <section class="rating_container" id="ratingContainer" v-show="changeShowType =='rating'">
           <section v-load-more="loaderMoreRating" type="2">
             <section>
-
               <header class="rating_header">
                 <section class="rating_header_left">
                   <p>{{shopDetailData.rating}}</p>
