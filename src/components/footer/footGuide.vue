@@ -363,7 +363,16 @@
           "
         ></use>
       </svg>
-      <span>我的</span>
+      <span>你的</span>
+    </section>
+    <section @click="gotoAddress('/test')" class="guide_item">
+      <svg class="icon_style">
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="#eleme"
+        ></use>
+      </svg>
+      <span>测试</span>
     </section>
   </section>
 </template>

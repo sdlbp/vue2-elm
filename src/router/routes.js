@@ -206,6 +206,7 @@ const find = (r) =>
   require.ensure([], () => r(require('../page/find/find')), 'find')
 const download = (r) =>
   require.ensure([], () => r(require('../page/download/download')), 'download')
+const test = (r) => require.ensure([], () => r(require('../page/test/test')), 'test')
 
 export default [
   {
@@ -213,6 +214,10 @@ export default [
     component: App, // 顶层路由，对应index.html
     children: [
       // 二级路由。对应App.vue
+      {
+        path: '/test',
+        component: test
+      },
       // 首页城市列表页
       {
         path: '/home',
