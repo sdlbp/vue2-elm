@@ -333,7 +333,7 @@ export default {
     transition: all 0.3s;
     position: absolute;
     top: -0.2rem;
-    z-index: 1;
+    z-index: $z-index-login-circle;
     left: -0.3rem;
     @include wh(1.2rem, 1.2rem);
     box-shadow: 0 0.026667rem 0.053333rem 0 rgba(0, 0, 0, 0.1);

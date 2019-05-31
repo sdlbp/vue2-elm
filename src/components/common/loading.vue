@@ -82,7 +82,7 @@ export default {
   @include wh(100%, 100%);
   // 缩写属性 一般设置顺序是 -color -image -repeat -position/-size
   position: relative;
-  z-index: 11;
+  z-index: $z-index-loading;
   background: url(../../images/icon_loading.png) no-repeat 0 0/2.5rem auto;
   transform: translateY(0px);
   // infinite 无限重复
@@ -90,7 +90,7 @@ export default {
 }
 .load_ellipse {
   position: absolute;
-  z-index: 10;
+  z-index: $z-index-loading-ellipse;
   @include wh(2.6rem, 2rem);
   top: 2.2rem;
   left: 0.2rem;

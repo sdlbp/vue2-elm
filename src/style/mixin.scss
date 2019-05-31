@@ -3,6 +3,12 @@ $blue: #3190e8;
 $bc: #e4e4e4;
 $fc: #fff;
 
+// z-index 计划抽取出来的目的是为了看出来层级结构,另外也防止消除页面之间的影响
+$z-index-login-circle: 1;
+$z-index-loading: 10;
+$z-index-loading-ellipse: 11;
+
+
 // 使用 @mixin 指令来定义重复使用的样式
 
 // 背景图片地址和大小
