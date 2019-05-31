@@ -368,7 +368,7 @@ export default {
       ratingTageIndex: 0, // 评价分类索引
       preventRepeatRequest: false, // 防止多次触发数据请求
       ratingTagName: '', // 评论的类型
-      loadRatings: false, // 加载更多评论是显示加载组件
+      loadRatings: false, // 加载更多评论时显示加载组件
       foodScroll: null, // 食品列表scroll
       showSpecs: false, // 控制显示食品规格
       specsIndex: 0, // 当前选中的规格索引值
