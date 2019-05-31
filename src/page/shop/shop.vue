@@ -809,7 +809,6 @@ export default {
   .shop_back_svg_container {
     position: fixed;
     @include wh(100%, 100%);
-
     img {
       @include wh(100%, 100%);
     }
